@@ -12,6 +12,7 @@ namespace UserTestUnit
             string actual = User.ValidateFirstName("Rehan");
             Assert.AreEqual(actual, "Rehan");
         }
+
         [Test]
         public void InputString_TestUserLastName()
         {
@@ -19,6 +20,7 @@ namespace UserTestUnit
             string actual = user.ValidateLastName("Shaik");
             Assert.AreEqual(actual, "Shaik");
         }
+
         [Test]
         public void InputString_TestUserEmail()
         {
@@ -26,6 +28,7 @@ namespace UserTestUnit
             string actual = user.ValidateEmail("rehansk007@gmail.com");
             Assert.AreEqual(actual, "rehansk007@gmail.com");
         }
+
         [Test]
         public void InputString_TestUserMobile()
         {
@@ -33,11 +36,20 @@ namespace UserTestUnit
             string actual = user.ValidateMobileNumber("9123456789");
             Assert.AreEqual(actual, "9123456789");
         }
+
         [Test]
         public void InputString_TestUserPassword()
         {
             UserValidate user = new UserValidate();
-            string actual = user.ValidatePassword("Drowssap321");
+            string actual = user.ValidatePassword("drowssap321");
+            Assert.AreEqual(actual, "drowssap321");
+        }
+
+        [Test]
+        public void InputString_TestUserPassword_MinOneUpperCase()
+        {
+            UserValidate user = new UserValidate();
+            string actual = user.PasswordMinOneUpper("Drowssap321");
             Assert.AreEqual(actual, "Drowssap321");
         }
     }
