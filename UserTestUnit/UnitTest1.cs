@@ -26,5 +26,12 @@ namespace UserTestUnit
             string actual = user.ValidateEmail("rehansk007@gmail.com");
             Assert.AreEqual(actual, "rehansk007@gmail.com");
         }
+        [Test]
+        public void InputString_TestUserMobile()
+        {
+            UserValidate user = new UserValidate();
+            string actual = user.ValidateMobileNumber("9123456789");
+            Assert.AreEqual(actual, "9123456789");
+        }
     }
 }

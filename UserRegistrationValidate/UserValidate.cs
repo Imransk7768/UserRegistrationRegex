@@ -7,6 +7,7 @@ namespace UserRegistrationValidate
         public const string _firstNameRegex = "^[A-Z]{1}[A-Za-z]{3,}$";
         public const string _lastNameRegex = "^[A-Z]{1}[A-Za-z]{3,}$";
         public const string _emailRegex = "^[0-9a-zA-Z]+[.+-_]{0,1}[0-9a-zA-Z]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}$";
+        public const string _mobileNumberRegex = "^[6-9]{1}[0-9]{9}$";
         public string ValidateFirstName(string firstName)
         {
             if (Regex.IsMatch(firstName, _firstNameRegex))
@@ -42,6 +43,18 @@ namespace UserRegistrationValidate
                 Console.WriteLine("Verify Email Again.");
             }
             return eMail;
+        }
+        public string ValidateMobileNumber(string mobile)
+        {
+            if (Regex.IsMatch(mobile, _mobileNumberRegex))
+            {
+                Console.WriteLine("Mobile No Matches.");
+            }
+            else
+            {
+                Console.WriteLine("Verify Mobile No Again.");
+            }
+            return mobile;
         }
     }
 }
