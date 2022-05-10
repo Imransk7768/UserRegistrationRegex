@@ -19,5 +19,12 @@ namespace UserTestUnit
             string actual = user.ValidateLastName("Shaik");
             Assert.AreEqual(actual, "Shaik");
         }
+        [Test]
+        public void InputString_TestUserEmail()
+        {
+            UserValidate user = new UserValidate();
+            string actual = user.ValidateEmail("rehansk007@gmail.com");
+            Assert.AreEqual(actual, "rehansk007@gmail.com");
+        }
     }
 }
