@@ -33,5 +33,12 @@ namespace UserTestUnit
             string actual = user.ValidateMobileNumber("9123456789");
             Assert.AreEqual(actual, "9123456789");
         }
+        [Test]
+        public void InputString_TestUserPassword()
+        {
+            UserValidate user = new UserValidate();
+            string actual = user.ValidatePassword("Drowssap321");
+            Assert.AreEqual(actual, "Drowssap321");
+        }
     }
 }
