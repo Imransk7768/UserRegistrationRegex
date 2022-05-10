@@ -12,5 +12,12 @@ namespace UserTestUnit
             string actual = User.ValidateFirstName("Rehan");
             Assert.AreEqual(actual, "Rehan");
         }
+        [Test]
+        public void InputString_TestUserLastName()
+        {
+            UserValidate user = new UserValidate();
+            string actual = user.ValidateLastName("Shaik");
+            Assert.AreEqual(actual, "Shaik");
+        }
     }
 }
