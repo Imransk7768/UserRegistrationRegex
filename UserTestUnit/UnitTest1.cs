@@ -41,15 +41,21 @@ namespace UserTestUnit
         public void InputString_TestUserPassword()
         {
             UserValidate user = new UserValidate();
-            string actual = user.ValidatePassword("drowssap321");
-            Assert.AreEqual(actual, "drowssap321");
+            string actual = user.ValidatePassword("drowssap");
+            Assert.AreEqual(actual, "drowssap");
         }
-
         [Test]
         public void InputString_TestUserPassword_MinOneUpperCase()
         {
             UserValidate user = new UserValidate();
-            string actual = user.PasswordMinOneUpper("Drowssap321");
+            string actual = user.PasswordMinOneUpper("Drowssap");
+            Assert.AreEqual(actual, "Drowssap");
+        }
+        [Test]
+        public void InputString_TestUserPassword_MinOneUpperOneNo()
+        {
+            UserValidate user = new UserValidate();
+            string actual = user.PasswordMinOneUpperOneNo("Drowssap321");
             Assert.AreEqual(actual, "Drowssap321");
         }
     }

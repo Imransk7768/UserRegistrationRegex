@@ -9,7 +9,8 @@ namespace UserRegistrationValidate
         public const string _emailRegex = "^[0-9a-zA-Z]+[.+-_]{0,1}[0-9a-zA-Z]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}$";
         public const string _mobileNumberRegex = "^[6-9]{1}[0-9]{9}$";
         public static string _passwordRegex = "^[a-zA-z0-9]{8,}$";
-        public static string _passwordmMinOneUpper = "[A-Z]{1}[a-zA-Z]{8, }$";
+        public static string _passwordmMinOneUpper = "^[A-Z]{1}[a-zA-Z]{8, }$";
+        public static string _passwordmMinOneUpperOneNo = "^[A-Z]{1}[a-z]{8, }[A-Z]{1, }[0-1]{1, }$";
         public string ValidateFirstName(string firstName)
         {
             if (Regex.IsMatch(firstName, _firstNameRegex))
@@ -81,6 +82,17 @@ namespace UserRegistrationValidate
                 Console.WriteLine("Verify Password Again.");
             }
             return passwordd;
+        }public string PasswordMinOneUpperOneNo(string passworrd)
+        {
+            if (Regex.IsMatch(passworrd, _passwordmMinOneUpperOneNo))
+            {
+                Console.WriteLine("Password Matches.");
+            }
+            else
+            {
+                Console.WriteLine("Verify Password Again.");
+            }
+            return passworrd;
         }
     }
 }
