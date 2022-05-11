@@ -58,5 +58,12 @@ namespace UserTestUnit
             string actual = user.PasswordMinOneUpperOneNo("Drowssap321");
             Assert.AreEqual(actual, "Drowssap321");
         }
+        [Test]
+        public void InputString_TestUserPasswordWithSpecialChar()
+        {
+            UserValidate user = new UserValidate();
+            string actual = user.PwdMinOneNo_Upper_SplChar("Drowssap#321");
+            Assert.AreEqual(actual, "Drowssap321#");
+        }
     }
 }

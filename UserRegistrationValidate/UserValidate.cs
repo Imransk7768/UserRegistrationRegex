@@ -11,6 +11,7 @@ namespace UserRegistrationValidate
         public static string _passwordRegex = "^[a-zA-z0-9]{8,}$";
         public static string _passwordmMinOneUpper = "^[A-Z]{1}[a-zA-Z]{8, }$";
         public static string _passwordmMinOneUpperOneNo = "^[A-Z]{1}[a-z]{8, }[A-Z]{1, }[0-1]{1, }$";
+        public static string _pwdWithOneUpperNoSpChar = "^[A-Z]{1, }[a-z]{8, }[A-Z]{1, }[0-1]{1, }[!*@#$%^&+=]{1}$";
         public string ValidateFirstName(string firstName)
         {
             if (Regex.IsMatch(firstName, _firstNameRegex))
@@ -73,7 +74,7 @@ namespace UserRegistrationValidate
         }
         public string PasswordMinOneUpper(string passwordd)
         {
-            if (Regex.IsMatch(passwordd, _passwordmMinOneUpper))
+            if (Regex.IsMatch(passwordd, _pwdWithOneUpperNoSpChar))
             {
                 Console.WriteLine("Password Matches.");
             }
@@ -82,7 +83,8 @@ namespace UserRegistrationValidate
                 Console.WriteLine("Verify Password Again.");
             }
             return passwordd;
-        }public string PasswordMinOneUpperOneNo(string passworrd)
+        }
+        public string PasswordMinOneUpperOneNo(string passworrd)
         {
             if (Regex.IsMatch(passworrd, _passwordmMinOneUpperOneNo))
             {
@@ -93,6 +95,18 @@ namespace UserRegistrationValidate
                 Console.WriteLine("Verify Password Again.");
             }
             return passworrd;
+        }
+        public string PwdMinOneNo_Upper_SplChar(string passwords)
+        {
+            if (Regex.IsMatch(passwords, _passwordmMinOneUpperOneNo))
+            {
+                Console.WriteLine("Password Matches.");
+            }
+            else
+            {
+                Console.WriteLine("Verify Password Again.");
+            }
+            return passwords;
         }
     }
 }
