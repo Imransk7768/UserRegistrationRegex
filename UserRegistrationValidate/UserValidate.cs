@@ -108,5 +108,9 @@ namespace UserRegistrationValidate
             }
             return passwords;
         }
+        public bool CheckEmail(string email)
+        {
+            return Regex.IsMatch(email, _emailRegex);
+        }
     }
 }
