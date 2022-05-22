@@ -113,5 +113,17 @@ namespace UserRegistrationValidate
         {
             return Regex.IsMatch(email, _emailRegex);
         }
+        public string ValidateEmailData(string eMail)
+        {
+            if (Regex.IsMatch(eMail, _emailRegex))
+            {
+                Console.WriteLine("Email Matches");
+            }
+            else
+            {
+                Console.WriteLine("Verify Email.");
+            }
+            return eMail;
+        }
     }
 }
