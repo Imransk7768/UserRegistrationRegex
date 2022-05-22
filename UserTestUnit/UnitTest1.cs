@@ -99,25 +99,5 @@ namespace UserTestUnit
             Assert.IsTrue(email9);
             Assert.IsTrue(email10);
         }
-        [Test]
-        public void InputString_TestPassword_ShouldReturnPassword()
-        {
-            UserValidate user = new UserValidate();
-            string actual = user.ValidateEmail("reena1@");
-            Assert.AreEqual(actual, "reena1@");
-        }
-
-        [Test]
-        [TestCase("Hello@welcome.com")]
-        [TestCase("Hello+plus@welcome.com")]
-        [TestCase("HarshuPatil@gmail.com.in")]
-        [TestCase("Hello+123@welcome.com")]
-        public void InputString_TestEmail_ShouldReturnEmailDataTest(string mail)
-        {
-            UserValidate user = new UserValidate();
-            string actual = user.ValidateEmailData(mail);
-            Assert.AreEqual(actual, mail);
-
-        }
     }
 }
