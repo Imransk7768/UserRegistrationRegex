@@ -12,6 +12,7 @@ namespace UserRegistrationValidate
         public static string _passwordmMinOneUpper = "^[A-Z]{1}[a-zA-Z]{8, }$";
         public static string _passwordmMinOneUpperOneNo = "^[A-Z]{1}[a-z]{8, }[A-Z]{1, }[0-1]{1, }$";
         public static string _pwdWithOneUpperNoSpChar = "^[A-Z]{1, }[a-z]{8, }[A-Z]{1, }[0-1]{1, }[!*@#$%^&+=]{1}$";
+
         public string ValidateFirstName(string firstName)
         {
             if (Regex.IsMatch(firstName, _firstNameRegex))

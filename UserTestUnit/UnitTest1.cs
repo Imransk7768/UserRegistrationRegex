@@ -38,6 +38,14 @@ namespace UserTestUnit
         }
 
         [Test]
+        public void InputString_TestMobileNumber_ShouldReturnMobileNumber()
+        {
+            UserValidate user = new UserValidate();
+            string actual = user.ValidateMobileNumber("+91 9012345678");
+            Assert.AreEqual(actual, "+91 9158719379");
+        }
+
+        [Test]
         public void InputString_TestUserPassword()
         {
             UserValidate user = new UserValidate();
@@ -91,5 +99,7 @@ namespace UserTestUnit
             Assert.IsTrue(email9);
             Assert.IsTrue(email10);
         }
+        [Test]
+        
     }
 }
