@@ -84,7 +84,7 @@ namespace UserTestUnit
             bool email5 = user.CheckEmail("abc111@abc.com");
             bool email6 = user.CheckEmail("abc-100@abc.net");
             bool email7 = user.CheckEmail("abc.100@abc.com.au");
-            bool email8 = user.CheckEmail("abc1@gmail.com");
+            bool email8 = user.CheckEmail("abc@gmail.com");
             bool email9 = user.CheckEmail("abc@gmail.com.com");
             bool email10 = user.CheckEmail("abc+100@gmail.com");
             Assert.IsTrue(email1);
@@ -98,6 +98,26 @@ namespace UserTestUnit
             Assert.IsTrue(email8);
             Assert.IsTrue(email9);
             Assert.IsTrue(email10);
+        }
+        [Test]
+        public void InputString_TestPassword_ShouldReturnPassword()
+        {
+            UserValidate user = new UserValidate();
+            string actual = user.ValidateEmail("reena1@");
+            Assert.AreEqual(actual, "reena1@");
+        }
+
+        [Test]
+        [TestCase("Abc@gmail.com")]
+        [TestCase("Abc+efg@gmail.com")]
+        [TestCase("Abc+100@gmail.com")]
+        [TestCase("Rehanshaik@gmail.com")]
+        public void InputString_TestEmail_ShouldReturnEmailDataTest(string mail)
+        {
+            UserValidate user = new UserValidate();
+            string actual = user.ValidateEmailData(mail);
+            Assert.AreEqual(actual, mail);
+
         }
     }
 }
