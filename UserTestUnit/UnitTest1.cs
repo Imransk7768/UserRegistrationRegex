@@ -38,7 +38,7 @@ namespace UserTestUnit
         {
             try
             {
-                string result = user.ValidateLastName("rehan.shaik@gmail.co.in");
+                string result = user.ValidateEmail("rehan.shaik@gmail.co.in");
                 Assert.AreEqual(result, "rehan.shaik@gmail.co.in");
             }
             catch (UserExceptions ex)
@@ -73,4 +73,5 @@ namespace UserTestUnit
             }
         }
     }
+}
 }
